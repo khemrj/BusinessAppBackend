@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Locked</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+        .wrapper { max-width: 600px; margin: 0 auto; }
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .header {
+            background: #b71c1c;
+            padding: 40px 32px;
+            text-align: center;
+            color: white;
+        }
+        .header h1 { font-size: 24px; margin-top: 12px; }
+        .body { padding: 40px 32px; }
+        .text {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+        .alert-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 24px 0;
+        }
+        .alert-box p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .unlock-badge {
+            background: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin: 24px 0;
+        }
+        .unlock-time {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        .unlock-label {
+            font-size: 13px;
+            color: #666;
+            margin-top: 4px;
+        }
+        .footer {
+            background: #f9f9f9;
+            padding: 24px 32px;
+            text-align: center;
+            border-top: 1px solid #eee;
+            font-size: 12px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="card">
+
+        <div class="header">
+            <div style="font-size: 48px;">🔒</div>
+            <h1>Account Temporarily Locked</h1>
+        </div>
+
+        <div class="body">
+
+            <p class="text">
+                Hi <strong th:text="${username}">User</strong>,
+            </p>
+
+            <p class="text">
+                Your account has been temporarily locked
+                because of multiple failed login attempts.
+                This is a security measure to protect
+                your account.
+            </p>
+
+            <!-- Auto unlock time -->
+            <div class="unlock-badge">
+                <div class="unlock-time"
+                     th:text="${unlockAfterMinutes} + ' min'">
+                    30 min
+                </div>
+                <div class="unlock-label">
+                    Auto-unlocks after this time
+                </div>
+            </div>
+
+            <!-- Security warning -->
+            <div class="alert-box">
+                <p>
+                    🛡️ <strong>Was this not you?</strong><br>
+                    If you did not make these login attempts,
+                    your account credentials may be compromised.
+                    Please contact us immediately at
+                    <a th:href="'mailto:' + ${supportEmail}"
+                       th:text="${supportEmail}">
+                        support@businessapp.com
+                    </a>
+                    so we can secure your account.
+                </p>
+            </div>
+
+            <p class="text">
+                You do not need to do anything if this was you.
+                Your account will unlock automatically.
+            </p>
+
+        </div>
+
+        <div class="footer">
+            <p>
+                © <span th:text="${currentYear}">2026</span>
+                <span th:text="${appName}">Business App</span>.
+                All rights reserved.
+            </p>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

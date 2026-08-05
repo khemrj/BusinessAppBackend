@@ -12,7 +12,7 @@
         <!-- ✅ FIX 1: Changed from 4.1.0 to 3.3.5
              Spring Boot 4.x does not exist yet
              3.3.5 is latest stable version -->
-        <version>3.3.5</version>
+        <version>3.3.13</version>
         <relativePath/>
     </parent>
 
@@ -104,7 +104,20 @@
             <groupId>com.bucket4j</groupId>
             <version>8.10.0</version>
         </dependency>
+        <!--SMTP mail dependency-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+        <!-- Thymeleaf — HTML email templates -->
 
+<dependency>
+
+    <groupId>org.springframework.boot</groupId>
+
+    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+
+</dependency>
         <!-- DevTools — hot reload -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -141,7 +154,7 @@
                         <exclude>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-                            <version>1.18.42</version>
+                            <version>1.18.38</version>
                         </exclude>
                     </excludes>
                 </configuration>

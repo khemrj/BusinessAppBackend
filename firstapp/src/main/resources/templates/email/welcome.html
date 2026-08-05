@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Business App</title>
+    <style>
+        /* Inline-friendly styles */
+        /* External CSS is stripped by most email clients */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0f2f5;
+            padding: 20px;
+        }
+        .wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .header {
+            background: linear-gradient(
+                135deg, #1A73E8 0%, #0D47A1 100%
+            );
+            padding: 48px 32px;
+            text-align: center;
+            color: white;
+        }
+        .header-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+        .header h1 {
+            font-size: 26px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .header p {
+            margin-top: 8px;
+            opacity: 0.85;
+            font-size: 15px;
+        }
+        .body {
+            padding: 40px 32px;
+        }
+        .greeting {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+        .text {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+        .cta-container {
+            text-align: center;
+            margin: 32px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #1A73E8;
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 14px 36px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .divider {
+            height: 1px;
+            background: #f0f0f0;
+            margin: 28px 0;
+        }
+        .support-text {
+            font-size: 13px;
+            color: #888;
+            line-height: 1.6;
+        }
+        .support-text a {
+            color: #1A73E8;
+            text-decoration: none;
+        }
+        .footer {
+            background: #f9f9f9;
+            padding: 24px 32px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+        .footer p {
+            font-size: 12px;
+            color: #aaa;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="card">
+
+        <!-- Header -->
+        <div class="header">
+            <div class="header-icon">🎉</div>
+            <h1>Welcome Aboard!</h1>
+            <p>Your account is ready to use</p>
+        </div>
+
+        <!-- Body -->
+        <div class="body">
+
+            <div class="greeting">
+                Hi <span th:text="${username}">User</span>! 👋
+            </div>
+
+            <p class="text">
+                Your Business App account has been created
+                successfully. You now have access to the full
+                platform — track your portfolio, place trades,
+                and manage your business all in one place.
+            </p>
+
+            <p class="text">
+                Click below to get started:
+            </p>
+
+            <!-- CTA Button -->
+            <div class="cta-container">
+                <a class="cta-button"
+                   th:href="${loginUrl}"
+                   href="#">
+                    Go to Dashboard →
+                </a>
+            </div>
+
+            <div class="divider"></div>
+
+            <p class="support-text">
+                Have questions? We're here to help.<br>
+                Contact us at
+                <a th:href="'mailto:' + ${supportEmail}"
+                   th:text="${supportEmail}">
+                    support@businessapp.com
+                </a>
+            </p>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>
+                © <span th:text="${currentYear}">2026</span>
+                <strong th:text="${appName}">
+                    Business App
+                </strong>.
+                All rights reserved.
+            </p>
+            <p style="margin-top: 6px;">
+                You received this because you registered
+                an account.
+            </p>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

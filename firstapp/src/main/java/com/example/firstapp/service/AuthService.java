@@ -55,6 +55,7 @@ public class AuthService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
+    private final EmailService emailService;
     private final AuthenticationManager authenticationManager;
 
     // Max failed attempts before account lockout
@@ -132,6 +133,11 @@ public class AuthService {
         String token = jwtService.generateToken(savedUser);
 
         log.info("Signup successful: {}", request.getEmail());
+        // Brevo emailing after signup is optional — can be disabled in config
+        emailService.sendWelcomeEmail(
+            savedUser.getEmail(),
+            savedUser.getUsername()
+        );
         return buildAuthResponse(savedUser, token);
     }
 
@@ -265,6 +271,8 @@ public class AuthService {
         // If email not found → silently do nothing
         // Never reveal if email exists in system
     }
+
+    
 
     /**
      * Builds standardized AuthResponse from User entity and token.

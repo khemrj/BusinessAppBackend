@@ -39,7 +39,7 @@ public class RateLimitConfig {
     // Login: 5 per minute per IP
     public static final int LOGIN_CAPACITY = 5;
     public static final Duration LOGIN_REFILL_DURATION =
-            Duration.ofMinutes(1);
+            Duration.ofMinutes(3);
 
     // Signup: 3 per hour per IP
     public static final int SIGNUP_CAPACITY = 3;

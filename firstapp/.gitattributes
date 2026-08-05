@@ -1,2 +1,16 @@
-/mvnw text eol=lf
+#Normalize all text files to LF in the repo
+* text eol=lf
+
+#windows batch/script files neeed CRLF
 *.cmd text eol=crlf
+*.bat text eol =crlf
+
+#Unix shell scripts and Maven wrapper shell scripts need LF
+*.sh text eol=lf
+mvnw text eol=lf
+#Binaries never convert
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.jar binary

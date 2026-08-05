@@ -1,0 +1,177 @@
+2026-08-06 00:01:16.953 DEBUG 8348 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/login
+2026-08-06 00:01:17.013 DEBUG 8348 --- [nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.is_active,
+        u1_0.is_locked,
+        u1_0.last_login_at,
+        u1_0.lock_time,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-08-06 00:01:17.033 DEBUG 8348 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/login
+2026-08-06 00:01:17.033  INFO 8348 --- [nio-8080-exec-8] c.e.f.controller.AuthController          : Login request received: ram@gmail.com
+2026-08-06 00:01:17.033  INFO 8348 --- [nio-8080-exec-8] c.e.firstapp.service.AuthService         : Login attempt for: ram@gmail.com
+2026-08-06 00:01:17.033 DEBUG 8348 --- [nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.is_active,
+        u1_0.is_locked,
+        u1_0.last_login_at,
+        u1_0.lock_time,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-08-06 00:01:17.309 DEBUG 8348 --- [nio-8080-exec-8] o.s.s.a.d.DaoAuthenticationProvider      : Authenticated user
+2026-08-06 00:01:17.309 DEBUG 8348 --- [nio-8080-exec-8] org.hibernate.SQL                        : 
+    update
+        users u1_0 
+    set
+        failed_attempts=0,
+        is_locked=0,
+        lock_time=null 
+    where
+        u1_0.email=?
+2026-08-06 00:01:17.309 DEBUG 8348 --- [nio-8080-exec-8] org.hibernate.SQL                        : 
+    update
+        users u1_0 
+    set
+        last_login_at=? 
+    where
+        u1_0.email=?
+2026-08-06 00:01:17.319 DEBUG 8348 --- [nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.is_active,
+        u1_0.is_locked,
+        u1_0.last_login_at,
+        u1_0.lock_time,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-08-06 00:01:17.319  INFO 8348 --- [nio-8080-exec-8] c.e.firstapp.service.AuthService         : Login successful: ram@gmail.com
+2026-08-06 00:01:17.556 DEBUG 8348 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/admin/users?page=0&size=20&sortBy=id&ascending=true
+2026-08-06 00:01:17.565 DEBUG 8348 --- [io-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.is_active,
+        u1_0.is_locked,
+        u1_0.last_login_at,
+        u1_0.lock_time,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-08-06 00:01:17.572 DEBUG 8348 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/admin/users?page=0&size=20&sortBy=id&ascending=true
+2026-08-06 00:01:17.572 DEBUG 8348 --- [io-8080-exec-10] horizationManagerBeforeMethodInterceptor : Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.data.domain.Page com.example.firstapp.controller.AdminUserController.listUsers(int,int,java.lang.String,boolean); target is of class [com.example.firstapp.controller.AdminUserController]
+2026-08-06 00:01:17.572 DEBUG 8348 --- [io-8080-exec-10] horizationManagerBeforeMethodInterceptor : Authorized method invocation ReflectiveMethodInvocation: public org.springframework.data.domain.Page com.example.firstapp.controller.AdminUserController.listUsers(int,int,java.lang.String,boolean); target is of class [com.example.firstapp.controller.AdminUserController]
+2026-08-06 00:01:17.585 DEBUG 8348 --- [io-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.is_active,
+        u1_0.is_locked,
+        u1_0.last_login_at,
+        u1_0.lock_time,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    order by
+        u1_0.id,
+        u1_0.id 
+    limit
+        ?, ?
+2026-08-06 00:01:42.537 DEBUG 8348 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/forgot-password
+2026-08-06 00:01:42.537 DEBUG 8348 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.is_active,
+        u1_0.is_locked,
+        u1_0.last_login_at,
+        u1_0.lock_time,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-08-06 00:01:42.551 DEBUG 8348 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/forgot-password
+2026-08-06 00:01:42.551 DEBUG 8348 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.is_active,
+        u1_0.is_locked,
+        u1_0.last_login_at,
+        u1_0.lock_time,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-08-06 00:01:42.551 DEBUG 8348 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        prt1_0.id,
+        prt1_0.created_at,
+        prt1_0.expires_at,
+        prt1_0.token_hash,
+        prt1_0.used,
+        prt1_0.user_id 
+    from
+        password_reset_tokens prt1_0 
+    where
+        prt1_0.user_id=?
+2026-08-06 00:01:42.820 DEBUG 8348 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        password_reset_tokens
+        (created_at, expires_at, token_hash, used, user_id) 
+    values
+        (?, ?, ?, ?, ?)
+2026-08-06 00:01:42.915  INFO 8348 --- [ email-thread-2] c.e.f.service.EmailServiceImpl           : Email sent: to=n**@gmail.com template=PASSWORD_RESET
