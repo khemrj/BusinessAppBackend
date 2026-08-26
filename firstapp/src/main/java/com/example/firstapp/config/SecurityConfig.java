@@ -23,8 +23,6 @@ import org.springframework.security.config.annotation
         .web.builders.HttpSecurity;
 import org.springframework.security.config.annotation
         .web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation
-        .web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http
         .SessionCreationPolicy;
 import org.springframework.security.core.userdetails
@@ -107,7 +105,8 @@ public class SecurityConfig {
                     "/api/v1/public/**", // public data
                     "/actuator/health",  // health monitoring
                     "/v3/api-docs/**",   // Swagger docs
-                    "/swagger-ui/**",    // Swagger UI
+                    "/swagger-ui/**", 
+                    "/api/v1/businesses/register",  // Swagger UI
                     "/swagger-ui.html"
                 ).permitAll()
 
