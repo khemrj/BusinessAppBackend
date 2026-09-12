@@ -3,16 +3,25 @@ package com.example.firstapp.service;
 import com.example.firstapp.dto.OpportunityCreateRequest;
 import com.example.firstapp.dto.OpportunityResponse;
 import com.example.firstapp.dto.OpportunityUpdateRequest;
+import com.example.firstapp.dto.Mapper.OpportunityMapper;
 import com.example.firstapp.entity.Business;
 import com.example.firstapp.entity.CompensationRange;
 import com.example.firstapp.entity.Opportunity;
 import com.example.firstapp.entity.User;
+import com.example.firstapp.enums.ExperienceLevel;
+import com.example.firstapp.enums.FinanceSpecialization;
 import com.example.firstapp.enums.OpportunityStatus;
+import com.example.firstapp.enums.OpportunityType;
+import com.example.firstapp.enums.WorkMode;
 import com.example.firstapp.repository.OpportunityRepository;
+import com.example.firstapp.repository.OpportunitySpecifications;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,7 +34,10 @@ import java.util.List;
 public class OpportunityService {
 
     private final OpportunityRepository opportunityRepository;
-
+    private final BusinessService businessService;
+    private final OpportunityMapper opportunityMapper;
+      
+    
     /**
      * Create a new opportunity.
      *
@@ -33,81 +45,42 @@ public class OpportunityService {
      * NOT from the Flutter request.
      */
     @Transactional
-    public OpportunityResponse createOpportunity(
-            OpportunityCreateRequest request,
-            User currentUser
-    ) {
+public OpportunityResponse createOpportunity(OpportunityCreateRequest request, User currentUser) {
 
-        log.info(
-                "Creating opportunity for user/business: {}",
-                currentUser.getId()
-        );
+    log.info("Creating opportunity for user: {}", currentUser.getId());
 
-        CompensationRange compensation =
-                CompensationRange.builder()
-                        .min(request.getCompensation().getMin())
-                        .max(request.getCompensation().getMax())
-                        .currency(
-                                request.getCompensation().getCurrency()
-                        )
-                        .disclosed(
-                                request.getCompensation().isDisclosed()
-                        )
-                        .build();
+    Business business = businessService.getByOwnerUserId(currentUser.getId());   // ← real row, not User.id
 
-        Opportunity opportunity = Opportunity.builder()
+    CompensationRange compensation = CompensationRange.builder()
+            .min(request.getCompensation().getMin())
+            .max(request.getCompensation().getMax())
+            .currency(request.getCompensation().getCurrency())
+            .disclosed(request.getCompensation().isDisclosed())
+            .build();
 
-                // Backend-controlled identity
-                .business(Business.builder().id(currentUser.getId()).build())
+    Opportunity opportunity = Opportunity.builder()
+            .business(business)                       // was: Business.builder().id(currentUser.getId()).build()
+            .businessName(business.getCompanyName())   // was: currentUser.getUsername()
+            .title(request.getTitle())
+            .specialization(request.getSpecialization())
+            .type(request.getType())
+            .experienceLevel(request.getExperienceLevel())
+            .workMode(request.getWorkMode())
+            .location(request.getLocation())
+            .description(request.getDescription())
+            .responsibilities(request.getResponsibilities())
+            .requiredSkills(request.getRequiredSkills())
+            .qualifications(request.getQualifications())
+            .compensation(compensation)
+            .openings(request.getOpenings())
+            .status(OpportunityStatus.PUBLISHED)
+            .applicationDeadline(request.getApplicationDeadline())
+            .build();
 
-                // Using username as business display name
-                // until you have a separate Business entity.
-                .businessName(currentUser.getUsername())
-
-                .title(request.getTitle())
-                .specialization(request.getSpecialization())
-                .type(request.getType())
-                .experienceLevel(request.getExperienceLevel())
-                .workMode(request.getWorkMode())
-                .location(request.getLocation())
-                .description(request.getDescription())
-
-                .responsibilities(
-                        request.getResponsibilities()
-                )
-
-                .requiredSkills(
-                        request.getRequiredSkills()
-                )
-
-                .qualifications(
-                        request.getQualifications()
-                )
-
-                .compensation(compensation)
-
-                .openings(request.getOpenings())
-
-                // New opportunities start as published.
-                .status(OpportunityStatus.PUBLISHED)
-
-                .applicationDeadline(
-                        request.getApplicationDeadline()
-                )
-
-                .build();
-
-        Opportunity saved =
-                opportunityRepository.save(opportunity);
-
-        log.info(
-                "Opportunity created successfully: {}",
-                saved.getId()
-        );
-
-        return OpportunityResponse.fromEntity(saved);
-        
-    }
+    Opportunity saved = opportunityRepository.save(opportunity);
+    log.info("Opportunity created successfully: {}", saved.getId());
+    return OpportunityResponse.fromEntity(saved);
+}
 
     /**
      * Get a single opportunity by ID.
@@ -326,6 +299,31 @@ public class OpportunityService {
                 id,
                 currentUser.getId()
         );
+    }
+//    * @Transactional here is what actually fixes the LazyInitializationException.
+//      * The session stays open for the ENTIRE method body — including the
+//      * page.map() call below — so requiredSkills/qualifications can lazily
+//      * batch-load successfully. Once this method returns, the DTOs are plain
+//      * POJOs with no lazy proxies left, so it's safe to hand them to the
+//      * controller and serialize them however long after that.
+//      */
+    @Transactional(readOnly = true)
+    public Page<OpportunityResponse> search(
+            FinanceSpecialization specialization,
+            WorkMode workMode,
+            ExperienceLevel experienceLevel,
+            OpportunityType type,
+            Pageable pageable) {
+
+        Specification<Opportunity> spec = Specification
+                .where(OpportunitySpecifications.isPublished())
+                .and(OpportunitySpecifications.hasSpecialization(specialization))
+                .and(OpportunitySpecifications.hasWorkMode(workMode))
+                .and(OpportunitySpecifications.hasExperienceLevel(experienceLevel))
+                .and(OpportunitySpecifications.hasType(type));
+
+        Page<Opportunity> page = opportunityRepository.findAll(spec, pageable);
+        return page.map(opportunityMapper::toResponse);
     }
 
     /**

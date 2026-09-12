@@ -163,7 +163,7 @@ public class Opportunity {
      * Required skills.
      *
      * Hibernate can only JOIN FETCH one List/bag collection per query,
-     * so this one relies on @BatchSize instead of a fetch join.
+     * so this one relies on @BatchSiz8e instead of a fetch join.
      */
     @ElementCollection
     @CollectionTable(

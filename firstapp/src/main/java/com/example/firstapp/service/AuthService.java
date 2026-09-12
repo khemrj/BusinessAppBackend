@@ -28,7 +28,7 @@ import java.time.LocalDateTime;
 
 /**
  * Authentication Service — ALL auth business logic lives here.
- *
+ *8
  * SEPARATION OF CONCERNS:
  * Controller → receives HTTP request, calls service, returns response
  * Service    → ALL business logic (this class)
@@ -116,8 +116,8 @@ public class AuthService {
                 // Default: CUSTOMER — minimum privileges
                 // Admin accounts created separately by admin
                 .role(Role.ROLE_CUSTOMER)
-                .isActive(true)
-                .isLocked(false)
+                .active(true)
+                .locked(false)
                 .failedAttempts(0)
                 .build();
         // @PrePersist sets createdAt and updatedAt automatically

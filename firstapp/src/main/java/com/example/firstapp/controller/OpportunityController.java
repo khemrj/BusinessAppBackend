@@ -4,14 +4,24 @@ import com.example.firstapp.dto.ApiResponse;
 import com.example.firstapp.dto.OpportunityCreateRequest;
 import com.example.firstapp.dto.OpportunityResponse;
 import com.example.firstapp.dto.OpportunityUpdateRequest;
+import com.example.firstapp.dto.PageResponse;
+import com.example.firstapp.dto.Mapper.OpportunityMapper;
+import com.example.firstapp.entity.Opportunity;
 import com.example.firstapp.entity.User;
+import com.example.firstapp.enums.ExperienceLevel;
+import com.example.firstapp.enums.FinanceSpecialization;
+import com.example.firstapp.enums.OpportunityType;
+import com.example.firstapp.enums.WorkMode;
 import com.example.firstapp.service.OpportunityService;
-
+import org.springframework.data.domain.Sort;
 import jakarta.validation.Valid;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.data.domain.Pageable;  // CORRECT
+import org.springframework.data.domain.Page;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -29,7 +39,7 @@ import java.util.List;
 public class OpportunityController {
 
     private final OpportunityService opportunityService;
-
+    private final OpportunityMapper opportunityMapper;
     /**
      * POST /api/v1/opportunities
      *
@@ -66,8 +76,7 @@ public class OpportunityController {
                 .status(HttpStatus.CREATED)
                 .body(
                     ApiResponse.success(
-                        "Opportunity created successfully",
-                        response
+                        "Opportunity created successfully"
                     )
                 );
     }
@@ -100,26 +109,29 @@ public class OpportunityController {
      * Get all PUBLISHED opportunities.
      *
      * This endpoint is intentionally public.
-     * Candidates do not need to be authenticated just
+     * Candidates do not need to be authenticated just8
      * to browse opportunities.
      */
-    @GetMapping
-    public ResponseEntity<ApiResponse<List<OpportunityResponse>>>
-    getPublishedOpportunities() {
+   
+    /// pageable opportunities using search and filter
+@GetMapping
+public ResponseEntity<ApiResponse<PageResponse<OpportunityResponse>>> getOpportunities(
+        @RequestParam(required = false) FinanceSpecialization specialization,
+        @RequestParam(required = false) WorkMode workMode,
+        @RequestParam(required = false) ExperienceLevel experienceLevel,
+        @RequestParam(required = false) OpportunityType type,
+        @PageableDefault(size = 20, sort = "postedAt", direction = Sort.Direction.DESC) Pageable pageable) {
 
-        List<OpportunityResponse> opportunities =
-                opportunityService.getPublishedOpportunities();
+    Page<OpportunityResponse> mapped =
+            opportunityService.search(specialization, workMode, experienceLevel, type, pageable);
 
-        return ResponseEntity.ok(
-                ApiResponse.success(
-                    "Opportunities fetched successfully",
-                    opportunities
-                )
-        );
-    }
+    return ResponseEntity.ok(
+        ApiResponse.success("Opportunities fetched successfully", PageResponse.from(mapped))
+    );
+}
 
     /**
-     * GET /api/v1/opportunities/my
+     * GET /api/v1/opportunities/m
      *
      * Get opportunities belonging to the authenticated user.
      */

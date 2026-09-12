@@ -6,7 +6,12 @@ import com.example.firstapp.enums.OpportunityStatus;
 import com.example.firstapp.enums.OpportunityType;
 import com.example.firstapp.enums.WorkMode;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -14,7 +19,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface OpportunityRepository
-        extends JpaRepository<Opportunity, Long> {
+        extends JpaRepository<Opportunity, Long>,JpaSpecificationExecutor<Opportunity> {
 
     /**
      * Get all opportunities belonging to a business.
@@ -113,4 +118,9 @@ public interface OpportunityRepository
     List<Opportunity> findByBusinessIdWithResponsibilities(
             @Param("businessId") Long businessId
     );
+   @EntityGraph(attributePaths = {
+        "business",
+        "responsibilities"
+    })
+    Page<Opportunity> findAll(Specification<Opportunity> spec, Pageable pageable);
 }

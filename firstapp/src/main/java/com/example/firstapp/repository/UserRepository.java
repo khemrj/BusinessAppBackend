@@ -60,7 +60,7 @@ public interface UserRepository
     @Modifying
     @Query("UPDATE User u SET " +
            "u.failedAttempts = 0, " +
-           "u.isLocked = false, " +
+           "u.locked = false, " +
            "u.lockTime = null " +
            "WHERE u.email = :email")
     void resetFailedAttempts(
@@ -74,7 +74,7 @@ public interface UserRepository
      */
     @Modifying
     @Query("UPDATE User u SET " +
-           "u.isLocked = true, " +
+           "u.locked = true, " +
            "u.lockTime = :lockTime " +
            "WHERE u.email = :email")
     void lockAccount(

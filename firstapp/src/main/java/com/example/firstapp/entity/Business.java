@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import com.example.firstapp.enums.IndustryType;
 
 import com.example.firstapp.enums.VerificationStatus;
-import com.example.firstapp.dto.AddressRequest;
 import com.example.firstapp.enums.BusinessStatus;
 import com.example.firstapp.enums.CompanySize;
 
