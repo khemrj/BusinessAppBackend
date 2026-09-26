@@ -2,8 +2,10 @@ package com.example.firstapp.service.Member;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.firstapp.dto.UpdateMemberRequest;
 import com.example.firstapp.dto.Member.MemberCreateRequest;
 import com.example.firstapp.dto.Member.MemberProfileResponse;
+import com.example.firstapp.entity.Address;
 import com.example.firstapp.entity.Member;
 import com.example.firstapp.entity.User;
 import com.example.firstapp.enums.ProfileVisibility;
@@ -68,4 +70,70 @@ public class MemberService {
                     )
             );
 } 
+
+@Transactional(readOnly = true)
+    public MemberProfileResponse getProfileBySlug(String slug) {
+
+        Member member = memberRepository.findByProfileSlug(slug)
+            .orElseThrow(() -> new ResourceNotFoundException(
+                "Member", "profileSlug", slug
+            ));
+
+        return MemberProfileResponse.fromEntity(  // prev it was member, experiences, educations, certifications
+            member
+        );
+    }
+    // self made update memver service function 
+    /**
+     * Update the profile belonging to the authenticated user.
+     */
+    @Transactional
+    public MemberProfileResponse updateMyProfile(
+            Long userId,
+            UpdateMemberRequest request
+    ) {
+        Long memberId = memberRepository
+                .findMemberIdByUserId(userId)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Member",
+                        "userId",
+                        userId
+                ));
+
+        Member member = memberRepository.findById(memberId)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Member",
+                        "memberId",
+                        memberId
+                ));
+
+        member.setFirstName(request.firstName());
+        member.setLastName(request.lastName());
+        member.setPhone(request.phone());
+        member.setHeadline(request.headline());
+        member.setBio(request.bio());
+        member.setContactEmail(request.contactEmail());
+        member.setWebsiteUrl(request.websiteUrl());
+        member.setLinkedinUrl(request.linkedinUrl());
+        member.setGithubUrl(request.githubUrl());
+
+        // Update embedded or associated address if location is provided
+        if (request.location() != null) {
+            if (member.getLocation() == null) {
+                member.setLocation(new Address());
+            }
+            member.getLocation().setStreet(request.location().street());
+            member.getLocation().setCity(request.location().city());
+            member.getLocation().setState(request.location().state());
+            member.getLocation().setCountry(request.location().country());
+            member.getLocation().setPostalCode(request.location().postalCode());
+        }
+
+        // No save() required.
+        // The entity is managed and Hibernate dirty checking
+        // will generate the UPDATE when the transaction commits.
+
+        return MemberProfileResponse.fromEntity(member);
+    }
+
 }

@@ -1,17 +1,15 @@
-package com.example.firstapp.service.Member;
 
+package com.example.firstapp.service.Member;
 
 import com.example.firstapp.dto.Member.CertificationRequest;
 import com.example.firstapp.dto.Member.CertificationResponse;
 import com.example.firstapp.entity.Member;
 import com.example.firstapp.entity.MemberCertification;
 import com.example.firstapp.exception.ResourceNotFoundException;
-import com.example.firstapp.exception.UnauthorizedException;
 import com.example.firstapp.repository.MemberCertificationRepository;
 import com.example.firstapp.repository.MemberRepository;
 
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,16 +24,21 @@ public class MemberCertificationService {
 
 
     /**
-     * Add a certification to a member profile.
-     *
-     * getReferenceById() avoids loading the complete Member entity.
-     * We only need a reference to establish the relationship.
+     * Add a certification to the authenticated user's profile.
      */
     @Transactional
     public CertificationResponse add(
-            Long memberId,
+            Long userId,
             CertificationRequest request
     ) {
+
+        Long memberId = memberRepository
+                .findMemberIdByUserId(userId)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Member",
+                        "userId",
+                        userId
+                ));
 
         Member member = memberRepository.getReferenceById(memberId);
 
@@ -50,109 +53,126 @@ public class MemberCertificationService {
                         .credentialUrl(request.credentialUrl())
                         .build();
 
-        return CertificationResponse.fromEntity(certificationRepository.save(certification));
+        certificationRepository.save(certification);
+
+        return CertificationResponse.fromEntity(certification);
     }
 
 
     /**
-     * Update an existing certification.
+     * Update a certification belonging to the authenticated user.
      */
     @Transactional
     public CertificationResponse update(
-            Long memberId,
+            Long userId,
             Long certificationId,
             CertificationRequest request
     ) {
 
-        MemberCertification certification =
-                certificationRepository.findById(certificationId)
-                        .orElseThrow(() ->
-                                new ResourceNotFoundException(
-                                        "Certification",
-                                        "id",
-                                        certificationId
-                                )
-                        );
+        Long memberId = memberRepository
+                .findMemberIdByUserId(userId)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Member",
+                        "userId",
+                        userId
+                ));
 
-        // Prevent member A from modifying member B's certification.
-        assertOwnership(
-                certification.getMember().getId(),
-                memberId
-        );
+        MemberCertification certification =
+                certificationRepository
+                        .findByIdAndMemberId(
+                                certificationId,
+                                memberId
+                        )
+                        .orElseThrow(() -> new ResourceNotFoundException(
+                                "Certification",
+                                "id",
+                                certificationId
+                        ));
 
         certification.setTitle(request.name());
+
         certification.setIssuingOrganization(
                 request.issuingOrganization()
         );
-        certification.setIssueDate(request.issuedDate());
+
+        certification.setIssueDate(
+                request.issuedDate()
+        );
+
         certification.setExpirationDate(
                 request.expiryDate()
         );
+
         certification.setCredentialId(
                 request.credentialUrl()
         );
+
         certification.setCredentialUrl(
                 request.credentialUrl()
         );
 
-        // Hibernate dirty checking updates the entity.
-        return CertificationResponse.fromEntity(certificationRepository.save(certification));
+        // No save() is required here.
+        // Hibernate dirty checking updates the managed entity
+        // when the transaction commits.
+
+        return CertificationResponse.fromEntity(certification);
     }
 
 
     /**
-     * Delete a certification.
+     * Delete a certification belonging to the authenticated user.
      */
     @Transactional
     public void delete(
-            Long memberId,
+            Long userId,
             Long certificationId
     ) {
 
-        MemberCertification certification =
-                certificationRepository.findById(certificationId)
-                        .orElseThrow(() ->
-                                new ResourceNotFoundException(
-                                        "Certification",
-                                        "id",
-                                        certificationId
-                                )
-                        );
+        Long memberId = memberRepository
+                .findMemberIdByUserId(userId)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Member",
+                        "userId",
+                        userId
+                ));
 
-        assertOwnership(
-                certification.getMember().getId(),
-                memberId
-        );
+        MemberCertification certification =
+                certificationRepository
+                        .findByIdAndMemberId(
+                                certificationId,
+                                memberId
+                        )
+                        .orElseThrow(() -> new ResourceNotFoundException(
+                                "Certification",
+                                "id",
+                                certificationId
+                        ));
 
         certificationRepository.delete(certification);
     }
 
 
     /**
-     * Get all certifications belonging to a member.
+     * Get all certifications belonging to the authenticated user.
      */
     @Transactional(readOnly = true)
-    public List<MemberCertification> getByMemberId(
-            Long memberId
+    public List<CertificationResponse> getMyCertifications(
+            Long userId
     ) {
+
+        Long memberId = memberRepository
+                .findMemberIdByUserId(userId)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Member",
+                        "userId",
+                        userId
+                ));
 
         return certificationRepository
-                .findByMemberIdOrderByIssueDateDesc(memberId);
-    }
-
-
-    /**
-     * Verify that the resource belongs to the requested member.
-     */
-    private void assertOwnership(
-            Long ownerId,
-            Long requesterId
-    ) {
-
-        if (!ownerId.equals(requesterId)) {
-            throw new UnauthorizedException(
-                    "You do not have permission to modify this record"
-            );
-        }
+                .findByMemberIdOrderByIssueDateDesc(memberId)
+                .stream()
+                .map(CertificationResponse::fromEntity)
+                .toList();
     }
 }
+

@@ -6,15 +6,13 @@ import com.example.firstapp.dto.BusinessUpdateRequest;
 import com.example.firstapp.entity.Business;
 import com.example.firstapp.entity.User;
 import com.example.firstapp.enums.BusinessStatus;
-import com.example.firstapp.enums.Role;
 import com.example.firstapp.enums.VerificationStatus;
 import com.example.firstapp.exception.EmailAlreadyExistsException;
 import com.example.firstapp.exception.ResourceNotFoundException;
 import com.example.firstapp.repository.BusinessRepository;
-import com.example.firstapp.repository.UserRepository;
+
 import lombok.RequiredArgsConstructor;
 
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,42 +20,37 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class BusinessService {
 
-    private final UserRepository userRepository;
+  
     private final BusinessRepository businessRepository;
-    private final PasswordEncoder passwordEncoder;
+  
 
     @Transactional
-    public Business registerBusiness(BusinessRegistrationRequest req) {
+    public Business registerBusiness(BusinessRegistrationRequest req, User user) {
 
-        if (userRepository.existsByEmail(req.email())) {
-            throw new   EmailAlreadyExistsException("Email is already in use");
-        }
-        if (businessRepository.existsByRegistrationNumber(req.registrationNumber())) {
-            throw new EmailAlreadyExistsException("Registration number is already in use");
-        }
+       
+       
         if (businessRepository.existsByContactEmail(req.contactEmail())) {
             throw new EmailAlreadyExistsException("Contact email is already in use");
         }
 
-        User user = User.builder()
-                .email(req.email())
-                .username(req.email())
-                .password(passwordEncoder.encode(req.password()))
-                .role(Role.ROLE_BUSINESS)
-                .build();
-        userRepository.save(user);
+        // User user = User.builder()
+        //         .email(req.email())
+        //         .username(req.email())
+        //         .password(passwordEncoder.encode(req.password()))
+        //         .role(Role.ROLE_BUSINESS)
+        //         .build();
+        // userRepository.save(user);
 
         Business business = Business.builder()
-                .owner(user)
+            .owner(user)
                 .companyName(req.companyName())
                 .registrationNumber(req.registrationNumber())
                 .industryType(req.industryType())
                 .companySize(req.companySize())
                 .website(req.website())
                 .description(req.description())
-                .headquarters(req.headquarters().toEntity())
-                .contactEmail(req.contactEmail())
-                .contactPhone(req.contactPhone())
+              
+                
                 .verificationStatus(VerificationStatus.PENDING)
                 .status(BusinessStatus.ACTIVE)
                 .build();

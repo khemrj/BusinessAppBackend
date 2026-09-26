@@ -6,18 +6,17 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+//business register garda halnu parne data haru
 
 public record BusinessRegistrationRequest(
-    @NotBlank @Email String email,
-    @NotBlank @Size(min = 8) String password,
+   
     @NotBlank String companyName,
-    @NotBlank String registrationNumber,
+    String registrationNumber,
     @NotNull IndustryType industryType,
-    CompanySize companySize,
+    @NotNull CompanySize companySize,
     String website,
     String description,
-    @Valid @NotNull AddressRequest headquarters,
-    @NotBlank @Email String contactEmail,
+    @Valid AddressRequest headquarters,
+    @Email String contactEmail,
     String contactPhone
 ) {}

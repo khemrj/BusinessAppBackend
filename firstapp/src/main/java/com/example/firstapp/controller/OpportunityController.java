@@ -6,7 +6,6 @@ import com.example.firstapp.dto.OpportunityResponse;
 import com.example.firstapp.dto.OpportunityUpdateRequest;
 import com.example.firstapp.dto.PageResponse;
 import com.example.firstapp.dto.Mapper.OpportunityMapper;
-import com.example.firstapp.entity.Opportunity;
 import com.example.firstapp.entity.User;
 import com.example.firstapp.enums.ExperienceLevel;
 import com.example.firstapp.enums.FinanceSpecialization;

@@ -57,7 +57,7 @@ public class Business {
     @Column(nullable = false)
     private String companyName;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true)
     private String registrationNumber;
 
     @Enumerated(EnumType.STRING)
@@ -76,9 +76,9 @@ public class Business {
     @Embedded
     private Address headquarters;
 
-    @Column(nullable = false, unique = true)
+    @Column( unique = true,nullable = true)
     private String contactEmail;
-
+    @Column (nullable = true)
     private String contactPhone;
 
     @Enumerated(EnumType.STRING)

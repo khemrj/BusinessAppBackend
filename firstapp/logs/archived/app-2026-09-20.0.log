@@ -1,0 +1,661 @@
+2026-09-20 03:20:12.751  INFO 18864 --- [  restartedMain] c.e.firstapp.FirstappApplication         : Starting FirstappApplication using Java 25.0.3 with PID 18864 (E:\firstapp\firstapp\target\classes started by Dell in E:\firstapp\firstapp)
+2026-09-20 03:20:12.759  INFO 18864 --- [  restartedMain] c.e.firstapp.FirstappApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-09-20 03:20:12.826  INFO 18864 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-20 03:20:12.826  INFO 18864 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-20 03:20:14.992  INFO 18864 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-20 03:20:15.106  INFO 18864 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97 ms. Found 8 JPA repository interfaces.
+2026-09-20 03:20:15.885  INFO 18864 --- [  restartedMain] o.s.b.w.e.tomcat.TomcatWebServer         : Tomcat initialized with port 8080 (http)
+2026-09-20 03:20:16.054  INFO 18864 --- [  restartedMain] o.a.catalina.core.StandardService        : Starting service [Tomcat]
+2026-09-20 03:20:16.054  INFO 18864 --- [  restartedMain] o.a.catalina.core.StandardEngine         : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2026-09-20 03:20:16.226  INFO 18864 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-20 03:20:16.227  INFO 18864 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3400 ms
+2026-09-20 03:20:16.295 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@f0f47eb
+
+2026-09-20 03:20:16.449  INFO 18864 --- [  restartedMain] o.h.jpa.internal.util.LogHelper          : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-20 03:20:16.558  INFO 18864 --- [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-09-20 03:20:16.615  INFO 18864 --- [  restartedMain] o.h.c.i.RegionFactoryInitiator           : HHH000026: Second-level cache disabled
+2026-09-20 03:20:17.023  INFO 18864 --- [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-20 03:20:17.064 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : BusinessAppHikariPool - configuration:
+2026-09-20 03:20:17.068 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2026-09-20 03:20:17.069 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2026-09-20 03:20:17.069 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2026-09-20 03:20:17.069 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2026-09-20 03:20:17.071 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTestQuery............."SELECT 1"
+2026-09-20 03:20:17.072 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............20000
+2026-09-20 03:20:17.073 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2026-09-20 03:20:17.073 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2026-09-20 03:20:17.073 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2026-09-20 03:20:17.074 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=<masked>}
+2026-09-20 03:20:17.074 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : driverClassName................."com.mysql.cj.jdbc.Driver"
+2026-09-20 03:20:17.075 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2026-09-20 03:20:17.075 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2026-09-20 03:20:17.075 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2026-09-20 03:20:17.075 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................600000
+2026-09-20 03:20:17.076 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2026-09-20 03:20:17.076 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2026-09-20 03:20:17.077 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:mysql://localhost:3306/businessapp?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+2026-09-20 03:20:17.078 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................0
+2026-09-20 03:20:17.078 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2026-09-20 03:20:17.079 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2026-09-20 03:20:17.079 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2026-09-20 03:20:17.080 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2026-09-20 03:20:17.080 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2026-09-20 03:20:17.080 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................5
+2026-09-20 03:20:17.081 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : password........................<masked>
+2026-09-20 03:20:17.081 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : poolName........................"BusinessAppHikariPool"
+2026-09-20 03:20:17.082 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2026-09-20 03:20:17.083 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2026-09-20 03:20:17.083 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2026-09-20 03:20:17.085 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2026-09-20 03:20:17.085 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2026-09-20 03:20:17.085 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2026-09-20 03:20:17.086 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : username........................"root"
+2026-09-20 03:20:17.086 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2026-09-20 03:20:17.086  INFO 18864 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : BusinessAppHikariPool - Starting...
+2026-09-20 03:20:17.574  INFO 18864 --- [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : BusinessAppHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@4f584d34
+2026-09-20 03:20:17.576  INFO 18864 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : BusinessAppHikariPool - Start completed.
+2026-09-20 03:20:18.803  INFO 18864 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-20 03:20:18.927 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table businesses 
+       modify column description TEXT
+2026-09-20 03:20:19.050 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table member_educations 
+       modify column description TEXT
+2026-09-20 03:20:19.072 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table member_experiences 
+       modify column description TEXT
+2026-09-20 03:20:19.103 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table members 
+       modify column bio TEXT
+2026-09-20 03:20:19.156 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table members 
+       modify column profile_visibility enum ('CONNECTIONS_ONLY','PRIVATE','PUBLIC') not null
+2026-09-20 03:20:19.180 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table members 
+       modify column specialization enum ('ACCOUNTING_AUDIT','ASSET_WEALTH_MANAGEMENT','CORPORATE_FINANCE','FINTECH','INSURANCE','INVESTMENT_BANKING','OTHER','PRIVATE_EQUITY_VC','RISK_COMPLIANCE')
+2026-09-20 03:20:19.201 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column description TEXT not null
+2026-09-20 03:20:19.247 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column experience_level enum ('EXECUTIVE','GRADUATE','JUNIOR','MID','SENIOR') not null
+2026-09-20 03:20:19.265 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column specialization enum ('ACCOUNTING_AUDIT','ASSET_WEALTH_MANAGEMENT','CORPORATE_FINANCE','FINTECH','INSURANCE','INVESTMENT_BANKING','OTHER','PRIVATE_EQUITY_VC','RISK_COMPLIANCE') not null
+2026-09-20 03:20:19.279 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column status enum ('CLOSED','DRAFT','PUBLISHED') not null
+2026-09-20 03:20:19.295 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column type enum ('CONTRACT','FULL_TIME','GIG','INTERNSHIP','PART_TIME') not null
+2026-09-20 03:20:19.312 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column work_mode enum ('HYBRID','ONSITE','REMOTE') not null
+2026-09-20 03:20:19.328 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunity_qualifications 
+       modify column qualification TEXT not null
+2026-09-20 03:20:19.337 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunity_responsibilities 
+       modify column responsibility TEXT not null
+2026-09-20 03:20:19.347 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table users 
+       modify column role enum ('ROLE_ADMIN','ROLE_ADVISORY','ROLE_BUSINESS','ROLE_CUSTOMER','ROLE_MEMBERS') not null
+2026-09-20 03:20:19.509  INFO 18864 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-20 03:20:19.804  INFO 18864 --- [  restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-20 03:20:20.244  INFO 18864 --- [  restartedMain] o.s.b.web.servlet.RegistrationBean       : Filter disableJwtAuthFilterRegistration was not registered (disabled)
+2026-09-20 03:20:20.410  INFO 18864 --- [  restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-09-20 03:20:20.412  WARN 18864 --- [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-09-20 03:20:20.733  INFO 18864 --- [  restartedMain] c.e.firstapp.config.AsyncConfig          : Email thread pool initialized: core=2 max=5 queue=50
+2026-09-20 03:20:20.985 DEBUG 18864 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-09-20 03:20:21.230  INFO 18864 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-09-20 03:20:21.281  INFO 18864 --- [  restartedMain] o.s.b.w.e.tomcat.TomcatWebServer         : Tomcat started on port 8080 (http) with context path '/'
+2026-09-20 03:20:21.289  INFO 18864 --- [  restartedMain] c.e.firstapp.FirstappApplication         : Started FirstappApplication in 9.077 seconds (process running for 10.555)
+2026-09-20 03:26:43.402  INFO 18864 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-20 03:26:43.415  INFO 18864 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-20 03:26:43.547  INFO 18864 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 129 ms
+2026-09-20 03:26:43.769 DEBUG 18864 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/login
+2026-09-20 03:26:43.997  WARN 18864 --- [nio-8080-exec-1] c.e.firstapp.filter.JwtAuthFilter        : Cannot extract username from token: JWT expired at 2026-09-13T07:05:36Z. Current time: 2026-09-19T21:41:43Z, a difference of 570967993 milliseconds.  Allowed clock skew: 0 milliseconds.
+2026-09-20 03:26:44.005 DEBUG 18864 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-20 03:26:44.010 DEBUG 18864 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/login
+2026-09-20 03:26:44.346  INFO 18864 --- [nio-8080-exec-1] c.e.f.controller.AuthController          : Login request received: rakesh@gmail.com
+2026-09-20 03:26:44.459  INFO 18864 --- [nio-8080-exec-1] c.e.firstapp.service.AuthService         : Login attempt for: rakesh@gmail.com
+2026-09-20 03:26:45.003 DEBUG 18864 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.is_active,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.last_login_at,
+        u1_0.lock_time,
+        u1_0.is_locked,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-09-20 03:26:45.357 DEBUG 18864 --- [nio-8080-exec-1] o.s.s.a.d.DaoAuthenticationProvider      : Authenticated user
+2026-09-20 03:26:45.400 DEBUG 18864 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    update
+        users u1_0 
+    set
+        failed_attempts=0,
+        is_locked=0,
+        lock_time=null 
+    where
+        u1_0.email=?
+2026-09-20 03:26:45.420 DEBUG 18864 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    update
+        users u1_0 
+    set
+        last_login_at=? 
+    where
+        u1_0.email=?
+2026-09-20 03:26:45.442 DEBUG 18864 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.is_active,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.last_login_at,
+        u1_0.lock_time,
+        u1_0.is_locked,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-09-20 03:26:45.476  INFO 18864 --- [nio-8080-exec-1] c.e.firstapp.service.AuthService         : Login successful: rakesh@gmail.com
+2026-09-20 03:38:37.620  INFO 18864 --- [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-09-20 03:38:38.156  INFO 18864 --- [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-20 03:38:38.359  INFO 18864 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : BusinessAppHikariPool - Shutdown initiated...
+2026-09-20 03:38:38.427  INFO 18864 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : BusinessAppHikariPool - Shutdown completed.
+2026-09-20 03:38:39.599  INFO 18864 --- [  restartedMain] c.e.firstapp.FirstappApplication         : Starting FirstappApplication using Java 25.0.3 with PID 18864 (E:\firstapp\firstapp\target\classes started by Dell in E:\firstapp\firstapp)
+2026-09-20 03:38:39.601  INFO 18864 --- [  restartedMain] c.e.firstapp.FirstappApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-09-20 03:38:40.218  INFO 18864 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-20 03:38:40.269  INFO 18864 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 8 JPA repository interfaces.
+2026-09-20 03:38:40.559  INFO 18864 --- [  restartedMain] o.s.b.w.e.tomcat.TomcatWebServer         : Tomcat initialized with port 8080 (http)
+2026-09-20 03:38:40.560  INFO 18864 --- [  restartedMain] o.a.catalina.core.StandardService        : Starting service [Tomcat]
+2026-09-20 03:38:40.562  INFO 18864 --- [  restartedMain] o.a.catalina.core.StandardEngine         : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2026-09-20 03:38:40.620  INFO 18864 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-20 03:38:40.620  INFO 18864 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 997 ms
+2026-09-20 03:38:40.672 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@a3dfe1d
+
+2026-09-20 03:38:40.767  INFO 18864 --- [  restartedMain] o.h.jpa.internal.util.LogHelper          : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-20 03:38:40.769  INFO 18864 --- [  restartedMain] o.h.c.i.RegionFactoryInitiator           : HHH000026: Second-level cache disabled
+2026-09-20 03:38:40.793  INFO 18864 --- [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-20 03:38:40.795 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : BusinessAppHikariPool - configuration:
+2026-09-20 03:38:40.798 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2026-09-20 03:38:40.800 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2026-09-20 03:38:40.800 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2026-09-20 03:38:40.801 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2026-09-20 03:38:40.801 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTestQuery............."SELECT 1"
+2026-09-20 03:38:40.801 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............20000
+2026-09-20 03:38:40.801 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2026-09-20 03:38:40.801 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2026-09-20 03:38:40.801 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2026-09-20 03:38:40.801 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=<masked>}
+2026-09-20 03:38:40.802 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : driverClassName................."com.mysql.cj.jdbc.Driver"
+2026-09-20 03:38:40.802 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2026-09-20 03:38:40.802 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2026-09-20 03:38:40.802 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2026-09-20 03:38:40.802 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................600000
+2026-09-20 03:38:40.802 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2026-09-20 03:38:40.802 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2026-09-20 03:38:40.803 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:mysql://localhost:3306/businessapp?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+2026-09-20 03:38:40.803 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................0
+2026-09-20 03:38:40.803 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2026-09-20 03:38:40.803 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2026-09-20 03:38:40.803 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2026-09-20 03:38:40.803 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2026-09-20 03:38:40.803 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2026-09-20 03:38:40.803 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................5
+2026-09-20 03:38:40.803 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : password........................<masked>
+2026-09-20 03:38:40.804 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : poolName........................"BusinessAppHikariPool"
+2026-09-20 03:38:40.804 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2026-09-20 03:38:40.804 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2026-09-20 03:38:40.804 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2026-09-20 03:38:40.805 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2026-09-20 03:38:40.805 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2026-09-20 03:38:40.805 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2026-09-20 03:38:40.806 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : username........................"root"
+2026-09-20 03:38:40.808 DEBUG 18864 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2026-09-20 03:38:40.809  INFO 18864 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : BusinessAppHikariPool - Starting...
+2026-09-20 03:38:40.849  INFO 18864 --- [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : BusinessAppHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@7cef1893
+2026-09-20 03:38:40.849  INFO 18864 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : BusinessAppHikariPool - Start completed.
+2026-09-20 03:38:41.241  INFO 18864 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-20 03:38:41.296 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table businesses 
+       modify column description TEXT
+2026-09-20 03:38:41.364 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table member_educations 
+       modify column description TEXT
+2026-09-20 03:38:41.378 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table member_experiences 
+       modify column description TEXT
+2026-09-20 03:38:41.394 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table members 
+       modify column bio TEXT
+2026-09-20 03:38:41.420 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table members 
+       modify column profile_visibility enum ('CONNECTIONS_ONLY','PRIVATE','PUBLIC') not null
+2026-09-20 03:38:41.443 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table members 
+       modify column specialization enum ('ACCOUNTING_AUDIT','ASSET_WEALTH_MANAGEMENT','CORPORATE_FINANCE','FINTECH','INSURANCE','INVESTMENT_BANKING','OTHER','PRIVATE_EQUITY_VC','RISK_COMPLIANCE')
+2026-09-20 03:38:41.535 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column description TEXT not null
+2026-09-20 03:38:41.553 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column experience_level enum ('EXECUTIVE','GRADUATE','JUNIOR','MID','SENIOR') not null
+2026-09-20 03:38:41.571 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column specialization enum ('ACCOUNTING_AUDIT','ASSET_WEALTH_MANAGEMENT','CORPORATE_FINANCE','FINTECH','INSURANCE','INVESTMENT_BANKING','OTHER','PRIVATE_EQUITY_VC','RISK_COMPLIANCE') not null
+2026-09-20 03:38:41.597 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column status enum ('CLOSED','DRAFT','PUBLISHED') not null
+2026-09-20 03:38:41.622 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column type enum ('CONTRACT','FULL_TIME','GIG','INTERNSHIP','PART_TIME') not null
+2026-09-20 03:38:41.645 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column work_mode enum ('HYBRID','ONSITE','REMOTE') not null
+2026-09-20 03:38:41.668 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunity_qualifications 
+       modify column qualification TEXT not null
+2026-09-20 03:38:41.715 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunity_responsibilities 
+       modify column responsibility TEXT not null
+2026-09-20 03:38:41.729 DEBUG 18864 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table users 
+       modify column role enum ('ROLE_ADMIN','ROLE_ADVISORY','ROLE_BUSINESS','ROLE_CUSTOMER','ROLE_MEMBERS') not null
+2026-09-20 03:38:41.839  INFO 18864 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-20 03:38:41.954  INFO 18864 --- [  restartedMain] o.s.b.web.servlet.RegistrationBean       : Filter disableJwtAuthFilterRegistration was not registered (disabled)
+2026-09-20 03:38:42.021  INFO 18864 --- [  restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-09-20 03:38:42.022  WARN 18864 --- [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-09-20 03:38:42.290  INFO 18864 --- [  restartedMain] c.e.firstapp.config.AsyncConfig          : Email thread pool initialized: core=2 max=5 queue=50
+2026-09-20 03:38:42.398 DEBUG 18864 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-09-20 03:38:42.570  INFO 18864 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-09-20 03:38:42.586  INFO 18864 --- [  restartedMain] o.s.b.w.e.tomcat.TomcatWebServer         : Tomcat started on port 8080 (http) with context path '/'
+2026-09-20 03:38:42.597  INFO 18864 --- [  restartedMain] c.e.firstapp.FirstappApplication         : Started FirstappApplication in 3.082 seconds (process running for 1111.863)
+2026-09-20 03:38:42.599  INFO 18864 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-09-20 03:43:32.487  INFO 18864 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-20 03:43:32.529  INFO 18864 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-20 03:43:32.633  INFO 18864 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 94 ms
+2026-09-20 03:43:32.864 DEBUG 18864 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/login
+2026-09-20 03:43:32.897 DEBUG 18864 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-20 03:43:32.910 DEBUG 18864 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/login
+2026-09-20 03:43:33.273  INFO 18864 --- [nio-8080-exec-1] c.e.f.controller.AuthController          : Login request received: rakesh@gmail.com
+2026-09-20 03:43:33.376  INFO 18864 --- [nio-8080-exec-1] c.e.firstapp.service.AuthService         : Login attempt for: rakesh@gmail.com
+2026-09-20 03:43:33.846 DEBUG 18864 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.is_active,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.last_login_at,
+        u1_0.lock_time,
+        u1_0.is_locked,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-09-20 03:43:34.175 DEBUG 18864 --- [nio-8080-exec-1] o.s.s.a.d.DaoAuthenticationProvider      : Failed to authenticate since password does not match stored value
+2026-09-20 03:43:34.577 DEBUG 18864 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.is_active,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.last_login_at,
+        u1_0.lock_time,
+        u1_0.is_locked,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-09-20 03:43:34.768 DEBUG 18864 --- [nio-8080-exec-1] org.hibernate.SQL                        : 
+    update
+        users u1_0 
+    set
+        failed_attempts=(u1_0.failed_attempts+1) 
+    where
+        u1_0.email=?
+2026-09-20 03:43:34.791  WARN 18864 --- [nio-8080-exec-1] c.e.firstapp.service.AuthService         : Failed login attempt #1 for: rakesh@gmail.com
+2026-09-20 03:43:35.163  WARN 18864 --- [nio-8080-exec-1] c.e.f.handler.GlobalExceptionHandler     : Bad request: Invalid email or password
+2026-09-20 03:43:35.394  WARN 18864 --- [nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.example.firstapp.exception.BadRequestException: Invalid email or password]
+2026-09-20 03:44:20.930 DEBUG 18864 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/login
+2026-09-20 03:44:20.931 DEBUG 18864 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-20 03:44:20.932 DEBUG 18864 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/login
+2026-09-20 03:44:20.935  INFO 18864 --- [nio-8080-exec-2] c.e.f.controller.AuthController          : Login request received: rakesh@gmail.com
+2026-09-20 03:44:20.939  INFO 18864 --- [nio-8080-exec-2] c.e.firstapp.service.AuthService         : Login attempt for: rakesh@gmail.com
+2026-09-20 03:44:20.942 DEBUG 18864 --- [nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.is_active,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.last_login_at,
+        u1_0.lock_time,
+        u1_0.is_locked,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-09-20 03:44:21.228 DEBUG 18864 --- [nio-8080-exec-2] o.s.s.a.d.DaoAuthenticationProvider      : Authenticated user
+2026-09-20 03:44:21.237 DEBUG 18864 --- [nio-8080-exec-2] org.hibernate.SQL                        : 
+    update
+        users u1_0 
+    set
+        failed_attempts=0,
+        is_locked=0,
+        lock_time=null 
+    where
+        u1_0.email=?
+2026-09-20 03:44:21.240 DEBUG 18864 --- [nio-8080-exec-2] org.hibernate.SQL                        : 
+    update
+        users u1_0 
+    set
+        last_login_at=? 
+    where
+        u1_0.email=?
+2026-09-20 03:44:21.250 DEBUG 18864 --- [nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.is_active,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.last_login_at,
+        u1_0.lock_time,
+        u1_0.is_locked,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-09-20 03:44:21.283  INFO 18864 --- [nio-8080-exec-2] c.e.firstapp.service.AuthService         : Login successful: rakesh@gmail.com
+2026-09-20 03:47:40.716 DEBUG 18864 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/members
+2026-09-20 03:47:40.867 DEBUG 18864 --- [nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.is_active,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.failed_attempts,
+        u1_0.last_login_at,
+        u1_0.lock_time,
+        u1_0.is_locked,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-09-20 03:47:40.877 DEBUG 18864 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/members
+2026-09-20 03:47:40.998 DEBUG 18864 --- [nio-8080-exec-4] horizationManagerBeforeMethodInterceptor : Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.example.firstapp.controller.MemberProfileController.create(com.example.firstapp.dto.Member.MemberCreateRequest,com.example.firstapp.entity.User); target is of class [com.example.firstapp.controller.MemberProfileController]
+2026-09-20 03:47:41.051 DEBUG 18864 --- [nio-8080-exec-4] horizationManagerBeforeMethodInterceptor : Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.example.firstapp.controller.MemberProfileController.create(com.example.firstapp.dto.Member.MemberCreateRequest,com.example.firstapp.entity.User); target is of class [com.example.firstapp.controller.MemberProfileController]
+2026-09-20 03:47:41.066  INFO 18864 --- [nio-8080-exec-4] c.e.f.c.MemberProfileController          : Creating member profile for user: rakesh@gmail.com
+2026-09-20 03:47:41.104 DEBUG 18864 --- [nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        m1_0.id 
+    from
+        members m1_0 
+    where
+        m1_0.profile_slug=? 
+    limit
+        ?
+2026-09-20 03:47:41.233 DEBUG 18864 --- [nio-8080-exec-4] org.hibernate.SQL                        : 
+    insert 
+    into
+        members
+        (bio, contact_email, cover_photo_url, created_at, first_name, github_url, headline, last_name, linkedin_url, city, country, postal_code, state, street, open_to_work, phone, profile_picture_url, profile_slug, profile_visibility, resume_url, specialization, updated_at, user_id, version, website_url, years_of_experience) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-09-20 03:47:41.279  WARN 18864 --- [nio-8080-exec-4] o.h.e.jdbc.spi.SqlExceptionHelper        : SQL Error: 1062, SQLState: 23000
+2026-09-20 03:47:41.279 ERROR 18864 --- [nio-8080-exec-4] o.h.e.jdbc.spi.SqlExceptionHelper        : Duplicate entry '28' for key 'members.uk_member_user_id'
+2026-09-20 03:47:41.297 ERROR 18864 --- [nio-8080-exec-4] c.e.f.handler.GlobalExceptionHandler     : Unexpected error at /api/v1/members: could not execute statement [Duplicate entry '28' for key 'members.uk_member_user_id'] [insert into members (bio,contact_email,cover_photo_url,created_at,first_name,github_url,headline,last_name,linkedin_url,city,country,postal_code,state,street,open_to_work,phone,profile_picture_url,profile_slug,profile_visibility,resume_url,specialization,updated_at,user_id,version,website_url,years_of_experience) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into members (bio,contact_email,cover_photo_url,created_at,first_name,github_url,headline,last_name,linkedin_url,city,country,postal_code,state,street,open_to_work,phone,profile_picture_url,profile_slug,profile_visibility,resume_url,specialization,updated_at,user_id,version,website_url,years_of_experience) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [members.uk_member_user_id]
+org.springframework.dao.DataIntegrityViolationException: could not execute statement [Duplicate entry '28' for key 'members.uk_member_user_id'] [insert into members (bio,contact_email,cover_photo_url,created_at,first_name,github_url,headline,last_name,linkedin_url,city,country,postal_code,state,street,open_to_work,phone,profile_picture_url,profile_slug,profile_visibility,resume_url,specialization,updated_at,user_id,version,website_url,years_of_experience) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into members (bio,contact_email,cover_photo_url,created_at,first_name,github_url,headline,last_name,linkedin_url,city,country,postal_code,state,street,open_to_work,phone,profile_picture_url,profile_slug,profile_visibility,resume_url,specialization,updated_at,user_id,version,website_url,years_of_experience) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [members.uk_member_user_id]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:290) ~[spring-orm-6.1.21.jar:6.1.21]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241) ~[spring-orm-6.1.21.jar:6.1.21]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:550) ~[spring-orm-6.1.21.jar:6.1.21]
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61) ~[spring-tx-6.1.21.jar:6.1.21]
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:335) ~[spring-tx-6.1.21.jar:6.1.21]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:160) ~[spring-tx-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.3.13.jar:3.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.21.jar:6.1.21]
+	at jdk.proxy6/jdk.proxy6.$Proxy195.save(Unknown Source) ~[na:na]
+	at com.example.firstapp.service.Member.MemberService.createMember(MemberService.java:58) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:769) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379) ~[spring-tx-6.1.21.jar:6.1.21]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:769) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:721) ~[spring-aop-6.1.21.jar:6.1.21]
+	at com.example.firstapp.service.Member.MemberService$$SpringCGLIB$$0.createMember(<generated>) ~[classes/:na]
+	at com.example.firstapp.controller.MemberProfileController.create(MemberProfileController.java:59) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:769) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:174) ~[spring-context-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:769) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.proceed(AuthorizationManagerBeforeMethodInterceptor.java:269) ~[spring-security-core-6.3.10.jar:6.3.10]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.attemptAuthorization(AuthorizationManagerBeforeMethodInterceptor.java:264) ~[spring-security-core-6.3.10.jar:6.3.10]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:197) ~[spring-security-core-6.3.10.jar:6.3.10]
+	at org.springframework.security.config.annotation.method.configuration.DeferringMethodInterceptor.invoke(DeferringMethodInterceptor.java:44) ~[spring-security-config-6.3.10.jar:6.3.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:769) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:721) ~[spring-aop-6.1.21.jar:6.1.21]
+	at com.example.firstapp.controller.MemberProfileController$$SpringCGLIB$$0.create(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.21.jar:6.1.21]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.21.jar:6.1.21]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.21.jar:6.1.21]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.21.jar:6.1.21]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.21.jar:6.1.21]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.21.jar:6.1.21]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.21.jar:6.1.21]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.21.jar:6.1.21]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.42.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.21.jar:6.1.21]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.42.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at com.example.firstapp.filter.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:205) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.10.jar:6.3.10]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.21.jar:6.1.21]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.10.jar:6.3.10]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at com.example.firstapp.filter.RateLimitFilter.doFilterInternal(RateLimitFilter.java:161) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.21.jar:6.1.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement [Duplicate entry '28' for key 'members.uk_member_user_id'] [insert into members (bio,contact_email,cover_photo_url,created_at,first_name,github_url,headline,last_name,linkedin_url,city,country,postal_code,state,street,open_to_work,phone,profile_picture_url,profile_slug,profile_visibility,resume_url,specialization,updated_at,user_id,version,website_url,years_of_experience) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]
+	at org.hibernate.dialect.MySQLDialect.lambda$buildSQLExceptionConversionDelegate$3(MySQLDialect.java:1243) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performMutation(GetGeneratedKeysDelegate.java:116) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:47) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:194) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:132) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:95) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:85) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:671) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:292) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:273) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:323) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:391) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:305) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:224) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:137) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:175) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:93) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:77) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:54) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:757) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:741) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:319) ~[spring-orm-6.1.21.jar:6.1.21]
+	at jdk.proxy6/jdk.proxy6.$Proxy189.persist(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:636) ~[spring-data-jpa-3.3.13.jar:3.3.13]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277) ~[spring-data-commons-3.3.13.jar:3.3.13]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170) ~[spring-data-commons-3.3.13.jar:3.3.13]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-3.3.13.jar:3.3.13]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516) ~[spring-data-commons-3.3.13.jar:3.3.13]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-3.3.13.jar:3.3.13]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628) ~[spring-data-commons-3.3.13.jar:3.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:173) ~[spring-data-commons-3.3.13.jar:3.3.13]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:148) ~[spring-data-commons-3.3.13.jar:3.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70) ~[spring-data-commons-3.3.13.jar:3.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379) ~[spring-tx-6.1.21.jar:6.1.21]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.21.jar:6.1.21]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.21.jar:6.1.21]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.21.jar:6.1.21]
+	... 137 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '28' for key 'members.uk_member_user_id'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:912) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1054) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	... 183 common frames omitted
+2026-09-20 03:47:41.317  WARN 18864 --- [nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement [Duplicate entry '28' for key 'members.uk_member_user_id'] [insert into members (bio,contact_email,cover_photo_url,created_at,first_name,github_url,headline,last_name,linkedin_url,city,country,postal_code,state,street,open_to_work,phone,profile_picture_url,profile_slug,profile_visibility,resume_url,specialization,updated_at,user_id,version,website_url,years_of_experience) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into members (bio,contact_email,cover_photo_url,created_at,first_name,github_url,headline,last_name,linkedin_url,city,country,postal_code,state,street,open_to_work,phone,profile_picture_url,profile_slug,profile_visibility,resume_url,specialization,updated_at,user_id,version,website_url,years_of_experience) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [members.uk_member_user_id]]

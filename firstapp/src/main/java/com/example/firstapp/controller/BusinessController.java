@@ -4,6 +4,7 @@ import com.example.firstapp.dto.BusinessRegistrationRequest;
 import com.example.firstapp.dto.BusinessResponse;
 import com.example.firstapp.dto.BusinessUpdateRequest;
 import com.example.firstapp.entity.Business;
+import com.example.firstapp.entity.User;
 import com.example.firstapp.service.BusinessService;
 
 import jakarta.validation.Valid;
@@ -12,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,13 +24,12 @@ public class BusinessController {
 
     private final BusinessService businessService;
 
-    /**
-     * Public — no auth required, this IS how a business gets an account.
-     * Creates the User (ROLE_BUSINESS) + Business row together.
-     */
+    /** Creates a business profile for the authenticated business user. */
     @PostMapping("/register")
-    public ResponseEntity<BusinessResponse> register(@RequestBody @Valid BusinessRegistrationRequest req) {
-        Business business = businessService.registerBusiness(req);
+    public ResponseEntity<BusinessResponse> register(
+            @RequestBody @Valid BusinessRegistrationRequest req,
+            @AuthenticationPrincipal User user) {
+        Business business = businessService.registerBusiness(req, user);
         return ResponseEntity.status(HttpStatus.CREATED).body(BusinessResponse.fromEntity(business));
     }
 

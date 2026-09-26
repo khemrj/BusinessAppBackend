@@ -92,7 +92,6 @@ public class SecurityConfig {
                     "/actuator/health",  // health monitoring
                     "/v3/api-docs/**",   // Swagger docs
                     "/swagger-ui/**", 
-                    "/api/v1/businesses/register",  // Swagger UI
                     "/swagger-ui.html",
                     "/api/v1/opportunities" // public listing of opportunities
                 ).permitAll()
