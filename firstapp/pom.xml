@@ -109,6 +109,19 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
+
+<dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-websocket</artifactId></dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-websocket</artifactId>
+</dependency>
+
+
+<!-- required by enableStompBrokerRelay -->
+<dependency><groupId>io.projectreactor.netty</groupId><artifactId>reactor-netty</artifactId></dependency>
+
+
+        
         <!-- Thymeleaf — HTML email templates -->
 
 <dependency>

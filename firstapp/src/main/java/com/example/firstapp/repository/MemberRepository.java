@@ -101,5 +101,8 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
         SELECT m.id FROM Member m WHERE m.user.id = :userId
     """)
     Optional<Long> findMemberIdByUserId(@Param("userId") Long userId);  
+
+    @Query("SELECT m.profilePictureUrl FROM Member m WHERE m.user.id = :userId")
+    Optional<String> findProfilePictureUrlByUserId(@Param("userId") Long userId);
             
 }
