@@ -66,16 +66,16 @@ public class RateLimitFilter extends OncePerRequestFilter {
     // Key format: "login:192.168.1.1" or "general:user@email.com"
     // Namespaced keys prevent collision between different limit types
 
-    private final Map<String, Bucket> loginBuckets =
+        private Map<String, Bucket> loginBuckets =
             new ConcurrentHashMap<>();
 
-    private final Map<String, Bucket> signupBuckets =
+        private Map<String, Bucket> signupBuckets =
             new ConcurrentHashMap<>();
 
-    private final Map<String, Bucket> generalBuckets =
+        private Map<String, Bucket> generalBuckets =
             new ConcurrentHashMap<>();
 
-    private final Map<String, Bucket> writeBuckets =
+        private Map<String, Bucket> writeBuckets =
             new ConcurrentHashMap<>();
 
     @Override

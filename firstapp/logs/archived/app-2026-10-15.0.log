@@ -1,0 +1,142 @@
+2026-10-15 10:43:20.379  INFO 18724 --- [  restartedMain] c.e.firstapp.FirstappApplication         : Starting FirstappApplication using Java 25.0.3 with PID 18724 (E:\firstapp\firstapp\target\classes started by Dell in E:\firstapp\firstapp)
+2026-10-15 10:43:20.385  INFO 18724 --- [  restartedMain] c.e.firstapp.FirstappApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-10-15 10:43:20.481  INFO 18724 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-15 10:43:20.482  INFO 18724 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-15 10:43:23.779  INFO 18724 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-15 10:43:24.143  INFO 18724 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 350 ms. Found 14 JPA repository interfaces.
+2026-10-15 10:43:25.698  INFO 18724 --- [  restartedMain] o.s.b.w.e.tomcat.TomcatWebServer         : Tomcat initialized with port 8080 (http)
+2026-10-15 10:43:25.734  INFO 18724 --- [  restartedMain] o.a.catalina.core.StandardService        : Starting service [Tomcat]
+2026-10-15 10:43:25.736  INFO 18724 --- [  restartedMain] o.a.catalina.core.StandardEngine         : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2026-10-15 10:43:25.941  INFO 18724 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-15 10:43:25.942  INFO 18724 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5459 ms
+2026-10-15 10:43:26.049 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@23b66855
+
+2026-10-15 10:43:26.264  INFO 18724 --- [  restartedMain] o.h.jpa.internal.util.LogHelper          : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-15 10:43:26.373  INFO 18724 --- [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-10-15 10:43:26.448  INFO 18724 --- [  restartedMain] o.h.c.i.RegionFactoryInitiator           : HHH000026: Second-level cache disabled
+2026-10-15 10:43:27.196  INFO 18724 --- [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-15 10:43:27.268 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : BusinessAppHikariPool - configuration:
+2026-10-15 10:43:27.274 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2026-10-15 10:43:27.275 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2026-10-15 10:43:27.276 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2026-10-15 10:43:27.278 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2026-10-15 10:43:27.280 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTestQuery............."SELECT 1"
+2026-10-15 10:43:27.281 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............20000
+2026-10-15 10:43:27.282 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2026-10-15 10:43:27.282 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2026-10-15 10:43:27.284 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2026-10-15 10:43:27.285 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=<masked>}
+2026-10-15 10:43:27.285 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : driverClassName................."com.mysql.cj.jdbc.Driver"
+2026-10-15 10:43:27.286 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2026-10-15 10:43:27.286 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2026-10-15 10:43:27.286 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2026-10-15 10:43:27.287 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................600000
+2026-10-15 10:43:27.287 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2026-10-15 10:43:27.288 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2026-10-15 10:43:27.289 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:mysql://localhost:3306/businessapp?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+2026-10-15 10:43:27.290 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................0
+2026-10-15 10:43:27.290 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2026-10-15 10:43:27.292 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2026-10-15 10:43:27.293 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2026-10-15 10:43:27.293 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2026-10-15 10:43:27.294 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2026-10-15 10:43:27.295 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................5
+2026-10-15 10:43:27.296 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : password........................<masked>
+2026-10-15 10:43:27.296 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : poolName........................"BusinessAppHikariPool"
+2026-10-15 10:43:27.296 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2026-10-15 10:43:27.297 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2026-10-15 10:43:27.297 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2026-10-15 10:43:27.297 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2026-10-15 10:43:27.297 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2026-10-15 10:43:27.298 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2026-10-15 10:43:27.298 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : username........................"root"
+2026-10-15 10:43:27.298 DEBUG 18724 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2026-10-15 10:43:27.298  INFO 18724 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : BusinessAppHikariPool - Starting...
+2026-10-15 10:43:27.976  INFO 18724 --- [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : BusinessAppHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@148344e
+2026-10-15 10:43:27.981  INFO 18724 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : BusinessAppHikariPool - Start completed.
+2026-10-15 10:43:31.535  INFO 18724 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-15 10:43:31.727 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table businesses 
+       modify column description TEXT
+2026-10-15 10:43:31.966 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table chat_conversations 
+       modify column type enum ('DIRECT','GROUP') not null
+2026-10-15 10:43:32.078 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table connections 
+       modify column status enum ('ACCEPTED','BLOCKED','DECLINED','PENDING') not null
+2026-10-15 10:43:32.117 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table member_educations 
+       modify column description TEXT
+2026-10-15 10:43:32.150 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table member_experiences 
+       modify column description TEXT
+2026-10-15 10:43:32.186 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table members 
+       modify column bio TEXT
+2026-10-15 10:43:32.272 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table members 
+       modify column profile_visibility enum ('CONNECTIONS_ONLY','PRIVATE','PUBLIC') not null
+2026-10-15 10:43:32.315 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table members 
+       modify column specialization enum ('ACCOUNTING_AUDIT','ASSET_WEALTH_MANAGEMENT','CORPORATE_FINANCE','FINTECH','INSURANCE','INVESTMENT_BANKING','OTHER','PRIVATE_EQUITY_VC','RISK_COMPLIANCE')
+2026-10-15 10:43:32.342 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table notifications 
+       modify column payload JSON
+2026-10-15 10:43:32.376 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table notifications 
+       modify column type enum ('CONNECTION_ACCEPTED','CONNECTION_REQUEST','POST_COMMENT','POST_LIKE') not null
+2026-10-15 10:43:32.461 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column description TEXT not null
+2026-10-15 10:43:32.532 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column experience_level enum ('EXECUTIVE','GRADUATE','JUNIOR','MID','SENIOR') not null
+2026-10-15 10:43:32.557 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column specialization enum ('ACCOUNTING_AUDIT','ASSET_WEALTH_MANAGEMENT','CORPORATE_FINANCE','FINTECH','INSURANCE','INVESTMENT_BANKING','OTHER','PRIVATE_EQUITY_VC','RISK_COMPLIANCE') not null
+2026-10-15 10:43:32.590 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column status enum ('CLOSED','DRAFT','PUBLISHED') not null
+2026-10-15 10:43:32.663 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column type enum ('CONTRACT','FULL_TIME','GIG','INTERNSHIP','PART_TIME') not null
+2026-10-15 10:43:32.700 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column work_mode enum ('HYBRID','ONSITE','REMOTE') not null
+2026-10-15 10:43:32.717 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunity_qualifications 
+       modify column qualification TEXT not null
+2026-10-15 10:43:32.728 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunity_responsibilities 
+       modify column responsibility TEXT not null
+2026-10-15 10:43:32.739 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table post_comments 
+       modify column content TEXT not null
+2026-10-15 10:43:32.768 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table posts 
+       modify column content TEXT
+2026-10-15 10:43:32.815 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table posts 
+       modify column visibility enum ('CONNECTIONS','PRIVATE','PUBLIC') not null
+2026-10-15 10:43:32.830 DEBUG 18724 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table users 
+       modify column role enum ('ROLE_ADMIN','ROLE_ADVISORY','ROLE_BUSINESS','ROLE_CUSTOMER','ROLE_MEMBERS') not null
+2026-10-15 10:43:33.159  INFO 18724 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-15 10:43:33.564  INFO 18724 --- [  restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-15 10:43:34.175  INFO 18724 --- [  restartedMain] o.s.b.web.servlet.RegistrationBean       : Filter disableJwtAuthFilterRegistration was not registered (disabled)
+2026-10-15 10:43:34.441  INFO 18724 --- [  restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-10-15 10:43:34.443  WARN 18724 --- [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-10-15 10:43:35.075  INFO 18724 --- [  restartedMain] c.e.firstapp.config.AsyncConfig          : Email thread pool initialized: core=2 max=5 queue=50
+2026-10-15 10:43:35.500 DEBUG 18724 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-10-15 10:43:36.083  INFO 18724 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-10-15 10:43:36.160  INFO 18724 --- [  restartedMain] o.s.b.w.e.tomcat.TomcatWebServer         : Tomcat started on port 8080 (http) with context path '/'
+2026-10-15 10:43:36.162  INFO 18724 --- [  restartedMain] o.s.m.s.s.StompBrokerRelayMessageHandler : Starting...
+2026-10-15 10:43:36.477  INFO 18724 --- [  restartedMain] o.s.m.s.s.StompBrokerRelayMessageHandler : Starting "system" session, StompBrokerRelay[ReactorNettyTcpClient[reactor.netty.tcp.TcpClientConnect@3c968a31]]
+2026-10-15 10:43:36.643  INFO 18724 --- [  restartedMain] o.s.m.s.s.StompBrokerRelayMessageHandler : Started.
+2026-10-15 10:43:36.655  INFO 18724 --- [  restartedMain] c.e.firstapp.FirstappApplication         : Started FirstappApplication in 16.961 seconds (process running for 18.931)
+2026-10-15 10:43:37.166  INFO 18724 --- [ent-scheduler-3] o.s.m.s.s.StompBrokerRelayMessageHandler : "System" session connected.
+2026-10-15 10:43:37.171  INFO 18724 --- [ent-scheduler-3] o.s.m.s.s.StompBrokerRelayMessageHandler : BrokerAvailabilityEvent[available=true, StompBrokerRelay[ReactorNettyTcpClient[reactor.netty.tcp.TcpClientConnect@3c968a31]]]

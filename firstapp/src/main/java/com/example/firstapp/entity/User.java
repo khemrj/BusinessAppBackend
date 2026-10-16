@@ -78,6 +78,13 @@ public class User implements UserDetails {
     )
     private String password;
 
+    @Column(
+        name = "user_profile_url",
+        nullable = true,
+        length = 255
+    )
+    private String UserProfileUrl;
+
     @Enumerated(EnumType.STRING)
     @Column(
         name = "role",

@@ -9,6 +9,8 @@ import com.example.firstapp.repository.Messaging.ConversationRepository;
 import com.example.firstapp.repository.Messaging.MessageRepository;
 import com.example.firstapp.repository.Messaging.ParticipantRepository;
 
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -19,11 +21,10 @@ import org.springframework.transaction.support.TransactionTemplate;
 import java.time.Instant;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class ChatService {
 
     private final ConversationRepository conversations;
@@ -33,19 +34,7 @@ public class ChatService {
     private final TransactionTemplate tx;
     private final UserService userService;  // ← Add this to fetch user details
 
-    public ChatService(ConversationRepository conversations, 
-                       ParticipantRepository participants,
-                       MessageRepository messages, 
-                       MessagePublisher publisher, 
-                       TransactionTemplate tx,
-                       UserService userService) {
-        this.conversations = conversations;
-        this.participants = participants;
-        this.messages = messages;
-        this.publisher = publisher;
-        this.tx = tx;
-        this.userService = userService;
-    }
+    
 
     // ========== CONVERSATIONS ==========
 

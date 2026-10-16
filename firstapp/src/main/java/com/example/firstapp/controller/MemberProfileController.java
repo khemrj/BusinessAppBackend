@@ -12,6 +12,7 @@ import com.example.firstapp.dto.Member.ExperienceResponse;
 import com.example.firstapp.dto.Member.MemberCreateRequest;
 import com.example.firstapp.dto.Member.MemberProfileResponse;
 import com.example.firstapp.entity.User;
+import com.example.firstapp.service.Advanced.ProfilePhotoService;
 import com.example.firstapp.service.Member.MemberCertificationService;
 import com.example.firstapp.service.Member.MemberEducationService;
 import com.example.firstapp.service.Member.MemberExperienceService;
@@ -31,6 +32,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @Slf4j
@@ -43,54 +45,60 @@ public class MemberProfileController {
         private final MemberExperienceService experienceService;
         private final MemberEducationService educationService;
         private final MemberCertificationService certificationService;
+        private final ProfilePhotoService profilePhotoService;
 
         /**
-         * Creates a profile for the currently authenticated user.
+         * lets make upload and load image controller
          */
-       @PreAuthorize("isAuthenticated()")
-@PostMapping
-public ResponseEntity<ApiResponse<MemberProfileResponse>> create(
-        @Valid @RequestBody MemberCreateRequest request,
-        @AuthenticationPrincipal User user) {
+        
+        @PostMapping("/me/profile-photo")
+        public ResponseEntity<String> uploadProfilePhoto(
+                        @RequestParam("file") MultipartFile file,
+                        @AuthenticationPrincipal User user) {
+                String photoUrl = profilePhotoService.upload(user.getId(), file);
+                return ResponseEntity.ok(photoUrl); 
+        }
+        
 
-    log.info("Creating member profile for user: {}", user.getUsername());
+        @PreAuthorize("isAuthenticated()")
+        @PostMapping
+        public ResponseEntity<ApiResponse<MemberProfileResponse>> create(
+                        @Valid @RequestBody MemberCreateRequest request,
+                        @AuthenticationPrincipal User user) {
 
-    MemberProfileResponse response =
-            memberService.createMember(user, request);
+                log.info("Creating member profile for user: {}", user.getUsername());
 
-    return ResponseEntity
-            .status(HttpStatus.CREATED)
-            .body(ApiResponse.success(
-                    "Profile created",
-                    response
-            ));
-}
+                MemberProfileResponse response = memberService.createMember(user, request);
 
-        @PreAuthorize ("isAuthenticated()")
+                return ResponseEntity
+                                .status(HttpStatus.CREATED)
+                                .body(ApiResponse.success(
+                                                "Profile created",
+                                                response));
+        }
+
+        @PreAuthorize("isAuthenticated()")
         @PatchMapping("/me/profile")
         public ResponseEntity<MemberProfileResponse> updateMyProfile(
-                @Valid @RequestBody UpdateMemberRequest request,
-                @AuthenticationPrincipal User user) {
+                        @Valid @RequestBody UpdateMemberRequest request,
+                        @AuthenticationPrincipal User user) {
                 MemberProfileResponse response = memberService.updateMyProfile(user.getId(), request);
                 return ResponseEntity.ok(response);
         }
 
         @PatchMapping("/me/educations/{educationId}")
-public ResponseEntity<EducationResponse> updateMyEducation(
-        @PathVariable Long educationId,
-        @Valid @RequestBody EducationUpdateRequest request,
-        @AuthenticationPrincipal User user
-) {
+        public ResponseEntity<EducationResponse> updateMyEducation(
+                        @PathVariable Long educationId,
+                        @Valid @RequestBody EducationUpdateRequest request,
+                        @AuthenticationPrincipal User user) {
 
-    EducationResponse response =
-            educationService.updateMyEducation(
-                    user.getId(),
-                    educationId,
-                    request
-            );
+                EducationResponse response = educationService.updateMyEducation(
+                                user.getId(),
+                                educationId,
+                                request);
 
-    return ResponseEntity.ok(response);
-}
+                return ResponseEntity.ok(response);
+        }
 
         @PatchMapping("/me/certifications/{certificationId}")
         public ResponseEntity<CertificationResponse> updateMyCertification(
@@ -141,21 +149,18 @@ public ResponseEntity<EducationResponse> updateMyEducation(
          * Adds an education to a member profile.
          */
         @PostMapping("/me/educations")
-public ResponseEntity<EducationResponse> addMyEducation(
-        @Valid @RequestBody EducationRequest request,
-        @AuthenticationPrincipal User user
-) {
+        public ResponseEntity<EducationResponse> addMyEducation(
+                        @Valid @RequestBody EducationRequest request,
+                        @AuthenticationPrincipal User user) {
 
-    EducationResponse response =
-            educationService.addEducation(
-                    user.getId(),
-                    request
-            );
+                EducationResponse response = educationService.addEducation(
+                                user.getId(),
+                                request);
 
-    return ResponseEntity
-            .status(HttpStatus.CREATED)
-            .body(response);
-}
+                return ResponseEntity
+                                .status(HttpStatus.CREATED)
+                                .body(response);
+        }
 
         /**
          * Adds a certification to a member profile.
@@ -189,16 +194,13 @@ public ResponseEntity<EducationResponse> addMyEducation(
 
         // get all educations details for the current user
         @GetMapping("/me/educations")
-public ResponseEntity<List<EducationResponse>> getMyEducations(
-        @AuthenticationPrincipal User user
-) {
+        public ResponseEntity<List<EducationResponse>> getMyEducations(
+                        @AuthenticationPrincipal User user) {
 
-    return ResponseEntity.ok(
-            educationService.getMyEducations(
-                    user.getId()
-            )
-    );
-}
+                return ResponseEntity.ok(
+                                educationService.getMyEducations(
+                                                user.getId()));
+        }
 
         @GetMapping("/me/experiences")
         public ResponseEntity<List<ExperienceResponse>> getMyExperiences(
@@ -241,27 +243,24 @@ public ResponseEntity<List<EducationResponse>> getMyEducations(
 
                 return ResponseEntity.noContent().build();
         }
+
         @DeleteMapping("/me/educations/{educationId}")
-public ResponseEntity<Void> deleteMyEducation(
-        @PathVariable Long educationId,
-        @AuthenticationPrincipal User user
-) {
+        public ResponseEntity<Void> deleteMyEducation(
+                        @PathVariable Long educationId,
+                        @AuthenticationPrincipal User user) {
 
-    educationService.deleteMyEducation(
-            user.getId(),
-            educationId
-    );
+                educationService.deleteMyEducation(
+                                user.getId(),
+                                educationId);
 
-    return ResponseEntity.noContent().build();
-}
-                           @GetMapping("/{slug}")
-    public ResponseEntity<MemberProfileResponse> getProfile(
-            @PathVariable String slug
-    ) {
-        MemberProfileResponse response =
-                memberService.getProfileBySlug(slug);
+                return ResponseEntity.noContent().build();
+        }
 
-        return ResponseEntity.ok(response);
-    }
+        @GetMapping("/{slug}")
+        public ResponseEntity<MemberProfileResponse> getProfile(
+                        @PathVariable String slug) {
+                MemberProfileResponse response = memberService.getProfileBySlug(slug);
 
+                return ResponseEntity.ok(response);
+        }
 }

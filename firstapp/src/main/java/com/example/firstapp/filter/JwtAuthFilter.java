@@ -5,7 +5,6 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.lang.NonNull;
 import org.springframework.security.authentication
@@ -52,13 +51,20 @@ import java.io.IOException;
  * No @Autowired needed — cleaner and testable.
  */
 @Component
-@RequiredArgsConstructor
 @Slf4j
 public class JwtAuthFilter extends OncePerRequestFilter {
 
     // All final — injected via constructor (Lombok)
     private final JwtService jwtService;
     private final UserDetailsService userDetailsService;
+
+        public JwtAuthFilter(
+                        JwtService jwtService,
+                        UserDetailsService userDetailsService
+        ) {
+                this.jwtService = jwtService;
+                this.userDetailsService = userDetailsService;
+        }
 
     /**
      * Core filter logic — called ONCE per request.

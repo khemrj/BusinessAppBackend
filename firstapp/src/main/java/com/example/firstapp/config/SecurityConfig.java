@@ -107,6 +107,7 @@ public class SecurityConfig {
                     "/api/v1/reports/**",
                     "/api/v1/analytics/**"
                 ).hasAnyRole("ADMIN", "MANAGER")
+                .requestMatchers("/api/v1/members/**").hasAnyRole("CUSTOMER","MANAGER")
 
                 // STAFF AND ABOVE
                 .requestMatchers(

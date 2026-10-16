@@ -1,0 +1,187 @@
+2026-10-01 21:04:03.149  INFO 7776 --- [  restartedMain] c.e.firstapp.FirstappApplication         : Starting FirstappApplication using Java 25.0.3 with PID 7776 (E:\firstapp\firstapp\target\classes started by Dell in E:\firstapp\firstapp)
+2026-10-01 21:04:03.155  INFO 7776 --- [  restartedMain] c.e.firstapp.FirstappApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-10-01 21:04:03.219  INFO 7776 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-01 21:04:03.220  INFO 7776 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-01 21:04:05.992  INFO 7776 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-01 21:04:06.232  INFO 7776 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 230 ms. Found 14 JPA repository interfaces.
+2026-10-01 21:04:07.209  INFO 7776 --- [  restartedMain] o.s.b.w.e.tomcat.TomcatWebServer         : Tomcat initialized with port 8080 (http)
+2026-10-01 21:04:07.233  INFO 7776 --- [  restartedMain] o.a.catalina.core.StandardService        : Starting service [Tomcat]
+2026-10-01 21:04:07.234  INFO 7776 --- [  restartedMain] o.a.catalina.core.StandardEngine         : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2026-10-01 21:04:07.336  INFO 7776 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-01 21:04:07.337  INFO 7776 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4115 ms
+2026-10-01 21:04:07.480 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@23b66855
+
+2026-10-01 21:04:07.726  INFO 7776 --- [  restartedMain] o.h.jpa.internal.util.LogHelper          : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-01 21:04:07.827  INFO 7776 --- [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-10-01 21:04:07.885  INFO 7776 --- [  restartedMain] o.h.c.i.RegionFactoryInitiator           : HHH000026: Second-level cache disabled
+2026-10-01 21:04:08.288  INFO 7776 --- [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-01 21:04:08.322 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : BusinessAppHikariPool - configuration:
+2026-10-01 21:04:08.325 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2026-10-01 21:04:08.325 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2026-10-01 21:04:08.325 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2026-10-01 21:04:08.326 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2026-10-01 21:04:08.326 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTestQuery............."SELECT 1"
+2026-10-01 21:04:08.327 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............20000
+2026-10-01 21:04:08.327 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2026-10-01 21:04:08.329 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2026-10-01 21:04:08.329 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2026-10-01 21:04:08.330 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=<masked>}
+2026-10-01 21:04:08.331 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : driverClassName................."com.mysql.cj.jdbc.Driver"
+2026-10-01 21:04:08.331 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2026-10-01 21:04:08.331 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2026-10-01 21:04:08.332 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2026-10-01 21:04:08.332 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................600000
+2026-10-01 21:04:08.332 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2026-10-01 21:04:08.332 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2026-10-01 21:04:08.333 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:mysql://localhost:3306/businessapp?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+2026-10-01 21:04:08.333 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................0
+2026-10-01 21:04:08.333 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2026-10-01 21:04:08.334 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2026-10-01 21:04:08.334 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2026-10-01 21:04:08.334 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2026-10-01 21:04:08.334 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2026-10-01 21:04:08.334 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................5
+2026-10-01 21:04:08.334 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : password........................<masked>
+2026-10-01 21:04:08.335 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : poolName........................"BusinessAppHikariPool"
+2026-10-01 21:04:08.335 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2026-10-01 21:04:08.335 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2026-10-01 21:04:08.336 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2026-10-01 21:04:08.337 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2026-10-01 21:04:08.338 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2026-10-01 21:04:08.338 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2026-10-01 21:04:08.338 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : username........................"root"
+2026-10-01 21:04:08.340 DEBUG 7776 --- [  restartedMain] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2026-10-01 21:04:08.340  INFO 7776 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : BusinessAppHikariPool - Starting...
+2026-10-01 21:04:08.780  INFO 7776 --- [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : BusinessAppHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@50d9546a
+2026-10-01 21:04:08.782  INFO 7776 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : BusinessAppHikariPool - Start completed.
+2026-10-01 21:04:10.187  INFO 7776 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-01 21:04:10.304 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table businesses 
+       modify column description TEXT
+2026-10-01 21:04:10.438 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table chat_conversations 
+       modify column type enum ('DIRECT','GROUP') not null
+2026-10-01 21:04:10.491 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table connections 
+       modify column status enum ('ACCEPTED','BLOCKED','DECLINED','PENDING') not null
+2026-10-01 21:04:10.511 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table member_educations 
+       modify column description TEXT
+2026-10-01 21:04:10.537 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table member_experiences 
+       modify column description TEXT
+2026-10-01 21:04:10.559 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table members 
+       modify column bio TEXT
+2026-10-01 21:04:10.612 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table members 
+       modify column profile_visibility enum ('CONNECTIONS_ONLY','PRIVATE','PUBLIC') not null
+2026-10-01 21:04:10.629 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table members 
+       modify column specialization enum ('ACCOUNTING_AUDIT','ASSET_WEALTH_MANAGEMENT','CORPORATE_FINANCE','FINTECH','INSURANCE','INVESTMENT_BANKING','OTHER','PRIVATE_EQUITY_VC','RISK_COMPLIANCE')
+2026-10-01 21:04:10.649 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table notifications 
+       modify column payload JSON
+2026-10-01 21:04:10.670 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table notifications 
+       modify column type enum ('CONNECTION_ACCEPTED','CONNECTION_REQUEST','POST_COMMENT','POST_LIKE') not null
+2026-10-01 21:04:10.685 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column description TEXT not null
+2026-10-01 21:04:10.729 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column experience_level enum ('EXECUTIVE','GRADUATE','JUNIOR','MID','SENIOR') not null
+2026-10-01 21:04:10.743 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column specialization enum ('ACCOUNTING_AUDIT','ASSET_WEALTH_MANAGEMENT','CORPORATE_FINANCE','FINTECH','INSURANCE','INVESTMENT_BANKING','OTHER','PRIVATE_EQUITY_VC','RISK_COMPLIANCE') not null
+2026-10-01 21:04:10.760 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column status enum ('CLOSED','DRAFT','PUBLISHED') not null
+2026-10-01 21:04:10.778 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column type enum ('CONTRACT','FULL_TIME','GIG','INTERNSHIP','PART_TIME') not null
+2026-10-01 21:04:10.794 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunities 
+       modify column work_mode enum ('HYBRID','ONSITE','REMOTE') not null
+2026-10-01 21:04:10.809 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunity_qualifications 
+       modify column qualification TEXT not null
+2026-10-01 21:04:10.819 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table opportunity_responsibilities 
+       modify column responsibility TEXT not null
+2026-10-01 21:04:10.828 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table post_comments 
+       modify column content TEXT not null
+2026-10-01 21:04:10.852 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table posts 
+       modify column content TEXT
+2026-10-01 21:04:10.885 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table posts 
+       modify column visibility enum ('CONNECTIONS','PRIVATE','PUBLIC') not null
+2026-10-01 21:04:10.897 DEBUG 7776 --- [  restartedMain] org.hibernate.SQL                        : 
+    alter table users 
+       modify column role enum ('ROLE_ADMIN','ROLE_ADVISORY','ROLE_BUSINESS','ROLE_CUSTOMER','ROLE_MEMBERS') not null
+2026-10-01 21:04:11.152  INFO 7776 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-01 21:04:11.578  INFO 7776 --- [  restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-01 21:04:12.150  INFO 7776 --- [  restartedMain] o.s.b.web.servlet.RegistrationBean       : Filter disableJwtAuthFilterRegistration was not registered (disabled)
+2026-10-01 21:04:12.217  WARN 7776 --- [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webSocketConfig': Injection of autowired dependencies failed
+2026-10-01 21:04:12.217  INFO 7776 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-01 21:04:12.222  INFO 7776 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : BusinessAppHikariPool - Shutdown initiated...
+2026-10-01 21:04:12.230  INFO 7776 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : BusinessAppHikariPool - Shutdown completed.
+2026-10-01 21:04:12.233  INFO 7776 --- [  restartedMain] o.a.catalina.core.StandardService        : Stopping service [Tomcat]
+2026-10-01 21:04:12.253  INFO 7776 --- [  restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-10-01 21:04:12.277 ERROR 7776 --- [  restartedMain] o.s.boot.SpringApplication               : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webSocketConfig': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.example.firstapp.FirstappApplication.main(FirstappApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'RABBIT_CLIENT_USER' in value "${RABBIT_CLIENT_USER}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveNestedPlaceholders(AbstractPropertyResolver.java:230)
+	at org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertyResolver.getProperty(ConfigurationPropertySourcesPropertyResolver.java:81)
+	at org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertyResolver.getProperty(ConfigurationPropertySourcesPropertyResolver.java:62)
+	at org.springframework.core.env.AbstractEnvironment.getProperty(AbstractEnvironment.java:552)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$1.getProperty(PropertySourcesPlaceholderConfigurer.java:153)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$1.getProperty(PropertySourcesPlaceholderConfigurer.java:149)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:85)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getPropertyAsRawString(PropertySourcesPropertyResolver.java:74)
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:153)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:964)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1379)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1358)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	... 20 common frames omitted

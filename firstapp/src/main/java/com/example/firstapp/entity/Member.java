@@ -142,7 +142,7 @@ public class Member {
      * LinkedIn-style cover/banner image.
      */
     @Column(
-        name = "cover_photo_url",
+        name = "cover_ph oto_url",
         length = 500
     )
     private String coverPhotoUrl;

@@ -1,10 +1,11 @@
 package com.example.firstapp.service.Advanced;
 
 import com.example.firstapp.entity.Member;
-
+import com.example.firstapp.entity.User;
 import com.example.firstapp.exception.BadRequestException;
 import com.example.firstapp.exception.ResourceNotFoundException;
 import com.example.firstapp.repository.MemberRepository;
+import com.example.firstapp.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +27,7 @@ import java.util.UUID;
 @Slf4j
 public class ProfilePhotoService {
 
-    private final MemberRepository memberRepository;
+    private final UserRepository userRepository;
 
     // Injected from application.properties — never hardcoded, so the
     // storage location is configurable per environment (dev/prod/CI)
@@ -42,14 +43,13 @@ public class ProfilePhotoService {
 
     private static final long MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024; // 5MB
 
-    @Transactional
+   @Transactional
     public String upload(Long userId, MultipartFile file) {
         validateFile(file);
-//saving profilephotoURl to member entity as profilephotourl
-        final long memberId = memberRepository.findMemberIdByUserId(userId).orElseThrow(() -> new ResourceNotFoundException("member", "id", userId));
-        Member member = memberRepository.findById(memberId).orElseThrow(() -> new ResourceNotFoundException("member", "id", memberId));
-
         
+        // Fetch the User entity directly instead of Member
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("user", "id", userId));
 
         Path storageLocation = resolveStorageLocation();
         String filename = buildUniqueFilename(userId, file);
@@ -77,11 +77,11 @@ public class ProfilePhotoService {
         
         // Remove the previous photo file — without this, every
         // re-upload leaves an orphaned file on disk forever.
-        deleteOldPhotoIfExists(member.getProfilePictureUrl());
+        deleteOldPhotoIfExists(user.getUserProfileUrl());
 
         String publicUrl = baseUrl + "/api/v1/users/photos/" + filename;
-        member.setProfilePictureUrl(publicUrl);
-        memberRepository.save(member);
+        user.setUserProfileUrl(publicUrl);
+        userRepository.save(user);
 
         log.info("Profile photo updated for user {}", userId);
         return publicUrl;

@@ -19,11 +19,15 @@ import org.springframework.security.core
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind
         .MethodArgumentNotValidException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation
         .ExceptionHandler;
 import org.springframework.web.bind.annotation
         .RestControllerAdvice;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
+import org.springframework.web.multipart.MultipartException;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -251,4 +255,27 @@ public class GlobalExceptionHandler {
                     "Please try again later."
                 ));
     }
+
+ 
+
+    @ExceptionHandler(MaxUploadSizeExceededException.class)
+    public ResponseEntity<String> handleMaxSizeException(MaxUploadSizeExceededException exc) {
+        return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE)
+                .body("File size exceeds the maximum permitted limit!");
+    }
+
+    @ExceptionHandler(MissingServletRequestParameterException.class)
+    public ResponseEntity<String> handleMissingParams(MissingServletRequestParameterException ex) {
+        return ResponseEntity.badRequest()
+                .body("Required parameter '" + ex.getParameterName() + "' is missing.");
+    }
+
+    @ExceptionHandler({MultipartException.class, IOException.class})
+    public ResponseEntity<String> handleMultipartErrors(Exception ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body("File upload failed: " + ex.getMessage());
+    }
+
+    // Handle your custom service exceptions here as well
+
 }
